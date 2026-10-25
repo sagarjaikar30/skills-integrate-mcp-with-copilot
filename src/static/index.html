@@ -8,6 +8,26 @@
   </head>
   <body>
     <header>
+      <div class="topbar">
+        <div></div>
+        <div id="admin-panel" class="admin-panel">
+          <button id="admin-toggle" class="admin-toggle" type="button" aria-label="Teacher login">👤</button>
+          <div id="admin-menu" class="admin-menu hidden">
+            <form id="admin-login-form">
+              <div class="form-group compact">
+                <label for="admin-username">Username</label>
+                <input type="text" id="admin-username" required placeholder="teacher" />
+              </div>
+              <div class="form-group compact">
+                <label for="admin-password">Password</label>
+                <input type="password" id="admin-password" required placeholder="••••••••" />
+              </div>
+              <button type="submit" class="small-button">Log In</button>
+            </form>
+            <button id="admin-logout" type="button" class="small-button hidden">Log Out</button>
+          </div>
+        </div>
+      </div>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
     </header>
@@ -22,8 +42,9 @@
       </section>
 
       <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
-        <form id="signup-form">
+        <h3 id="signup-title">Teacher Activity Management</h3>
+        <p id="signup-status" class="admin-info">Log in as a teacher to register or unregister students.</p>
+        <form id="signup-form" class="teacher-only">
           <div class="form-group">
             <label for="email">Student Email:</label>
             <input type="email" id="email" required placeholder="your-email@mergington.edu" />
@@ -35,7 +56,7 @@
               <!-- Activity options will be loaded here -->
             </select>
           </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit">Register Student</button>
         </form>
         <div id="message" class="hidden"></div>
       </section>
